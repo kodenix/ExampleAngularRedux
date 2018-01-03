@@ -5,12 +5,14 @@ import { StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './counter/counter.component';
+import { ResetComponent } from './reset/reset.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
