@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Store, Action } from '@ngrx/store';
 import { AppState } from '../../redux/app.state';
-import { INCREMENT, DECREMENT, PLUS, PlusAction } from './../../redux/counter/counter.actions';
+import { PlusAction, IncrementAction, DecrementAction } from './../../redux/counter/counter.actions';
 
 @Component({
   selector: 'app-counter',
@@ -25,26 +25,18 @@ export class CounterComponent implements OnInit {
   }
 
   public increment() {
-    const action: Action = {
-      type: INCREMENT
-    };
-
+    const action: Action = new IncrementAction();
     this.store.dispatch(action);
 
   }
 
   decrement() {
-    const action: Action = {
-      type: DECREMENT
-    };
+    const action: Action = new DecrementAction();
     this.store.dispatch(action);
   }
 
   plus() {
-    const action: PlusAction = {
-      type: PLUS,
-      payload: 12
-    };
+    const action: PlusAction = new PlusAction(12);
     this.store.dispatch(action);
   }
 

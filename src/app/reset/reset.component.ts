@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, Action } from '@ngrx/store';
 import { AppState } from '../../redux/app.state';
-import { RESET } from '../../redux/counter/counter.actions';
+import { RESET, ResetAction } from '../../redux/counter/counter.actions';
 
 @Component({
   selector: 'app-reset',
@@ -28,9 +28,7 @@ export class ResetComponent implements OnInit {
   }
 
   reset() {
-    const action: Action = {
-      type: RESET
-    };
+    const action: Action = new ResetAction();
     this.store.dispatch(action);
   }
 
